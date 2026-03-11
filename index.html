@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Bed Syndrome - Understanding Healthcare Access Crisis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>No Bed Syndrome</h1>
+            <p class="subtitle">Click on the bed to explore healthcare access factors</p>
+        </header>
+
+        <main class="homepage-main">
+            <section class="bed-container">
+                <svg viewBox="0 50 800 550" class="bed-illustration" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Headboard -->
+                    <g class="bed-region" data-region="headboard">
+                        <rect x="60" y="80" width="680" height="120" fill="#5c5b5c" stroke="#4a4e4a" stroke-width="2" />
+                        <rect x="80" y="90" width="640" height="100" fill="#5c5b5c" stroke="none" />
+                        <text x="400" y="140" text-anchor="middle" class="bed-label-white">The Catalyst</text>
+                    </g>
+
+                    <!-- Mattress -->
+                    <g class="bed-region" data-region="mattress">
+                        <rect x="80" y="200" width="640" height="280" rx="5" fill="#fad7ef" stroke="#d4b5c0"
+                            stroke-width="2" />
+                        <rect x="90" y="210" width="620" height="260" rx="3" fill="#fad7ef" stroke="none" />
+                        <text x="400" y="230" text-anchor="middle" class="bed-label">Systematic Failures</text>
+                    </g>
+
+                    <!-- Pillows -->
+                    <g>
+                        <rect x="100" y="120" width="220" height="90" rx="15" fill="#FFFFFF" stroke="#E0E0E0"
+                            stroke-width="2" />
+                        <rect x="480" y="120" width="220" height="90" rx="15" fill="#FFFFFF" stroke="#E0E0E0"
+                            stroke-width="2" />
+                    </g>
+
+                    <!-- Blanket -->
+                    <g class="bed-region" data-region="blanket">
+                        <rect x="80" y="240" width="640" height="260" fill="#ffc4ed" stroke="none" stroke-width="2" />
+                        <rect x="90" y="250" width="620" height="240" fill="#ffc4ed" stroke="none" />
+                        <text x="400" y="270" text-anchor="middle" class="bed-label">Attitudes within Healthcare</text>
+                    </g>
+
+                    <!-- Top Sheet -->
+                    <g class="bed-region" data-region="sheet">
+                        <rect x="80" y="290" width="640" height="250" fill="#c71e67" stroke="#c71e67"
+                            stroke-width="2" />
+                        <rect x="90" y="300" width="620" height="230" fill="#c71e67" stroke="none" />
+                        <text x="400" y="415" text-anchor="middle" class="bed-label-white">Gendered Violence</text>
+                    </g>
+
+                    <!-- Bed Frame -->
+                    <rect x="60" y="520" width="680" height="20" fill="#5c5b5c" stroke="#4a4e4a" stroke-width="2" />
+
+                    <!-- Bed Legs -->
+                    <rect x="70" y="540" width="30" height="60" fill="#4a4e4a" stroke="#3d4038" stroke-width="2" />
+                    <rect x="700" y="540" width="30" height="60" fill="#4a4e4a" stroke="#3d4038" stroke-width="2" />
+                </svg>
+
+                <!-- Tooltip -->
+                <div id="tooltip" class="tooltip"></div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

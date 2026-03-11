@@ -1,0 +1,722 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sour Gummy', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: transparent;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    padding: 0.5rem 0;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-family: 'Outfit', sans-serif;
+}
+
+.subtitle {
+    color: #6c757d;
+    font-size: 1rem;
+    margin: 0;
+}
+
+main.homepage-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+}
+
+/* Bed container */
+.bed-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bed-illustration {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    background-color: transparent;
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+/* Bed regions */
+.bed-region {
+    cursor: pointer;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.bed-region:hover:not([data-region="mattress"]) {
+    filter: brightness(1.2) saturate(1.1);
+    transform: scale(1.02);
+}
+
+.bed-region[data-region="mattress"]:hover {
+    filter: none;
+}
+
+.bed-region[data-region="mattress"]:hover rect {
+    fill: #ffebf7 !important;
+}
+
+.bed-region:hover .bed-label,
+.bed-region:hover .bed-label-small,
+.bed-region:hover .bed-label-white {
+    font-size: 16px;
+    transition: font-size 0.5s ease;
+}
+
+.bed-label {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    fill: #000000;
+    pointer-events: none;
+}
+
+.bed-label-white {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    fill: #ffffff;
+    pointer-events: none;
+}
+
+.bed-label-small {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    fill: #2c3e50;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Debug: Make bed regions more visible */
+.bed-region rect,
+.bed-region ellipse {
+    opacity: 0.9;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(44, 62, 80, 0.95);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    color: #6c757d;
+}
+
+/* Section pages */
+.section-header {
+    background: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.section-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-btn {
+    background: #c71e67;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+    font-weight: 500;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.home-btn:hover {
+    background: #a0144a;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.section-content .intro-section {
+    margin: 1.5rem 0 2rem 0 !important;
+    padding: 2rem !important;
+    background: #f8f9fa !important;
+    border-radius: 10px !important;
+    border-left: 4px solid #c71e67 !important;
+}
+
+.section-content .intro-text {
+    margin: 1rem 0 !important;
+}
+
+.section-content .intro-text p {
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+    color: #2c3e50 !important;
+    margin: 1rem 1rem !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.intro-paragraph {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.intro-paragraph p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2c3e50;
+    margin-bottom: 0 !important;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+}
+
+.intro-paragraph p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.graph-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.graph-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.graph-card-full {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.graph-card-full:hover {
+    transform: translateY(-5px);
+}
+
+.graph-card-wide {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hospital-flow-chart-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.hospital-flow-chart-horizontal .hospital-node {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    min-width: 120px;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hospital-flow-chart-horizontal .hospital-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hospital-flow-chart-horizontal .hospital-node.final {
+    background: #ffebee;
+    border-color: #c71e67;
+}
+
+.hospital-flow-chart-horizontal .hospital-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.hospital-flow-chart-horizontal .hospital-name {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+
+.hospital-flow-chart-horizontal .hospital-status {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    color: #c71e67;
+    font-weight: 600;
+}
+
+.flow-arrow-horizontal {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin: 0 0.5rem;
+}
+
+.timeline-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.timeline-event {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    width: 90%;
+    margin: 0.3rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-event:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-event.final {
+    background: #ffebee;
+    border-color: #c71e67;
+}
+
+.timeline-date {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #c71e67;
+    margin-bottom: 0.3rem;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.timeline-title {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-hospital {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.timeline-arrow {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin: 0.2rem 0;
+}
+
+.funding-vs-need-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.chart-bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.chart-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    position: relative;
+}
+
+.bar-label {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.bar-value {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.bar-fill {
+    width: 60px;
+    background: #c71e67;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease;
+}
+
+.chart-bar.funding .bar-fill {
+    background: #6c757d;
+}
+
+.chart-bar.need .bar-fill {
+    background: #c71e67;
+}
+
+.chart-title {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.beds-by-region-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.region-bars {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.region-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.region-name {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.region-bar .bar-fill {
+    height: 20px;
+    background: #c71e67;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.region-bar .bar-value {
+    margin-top: 0.3rem;
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.9rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead {
+    background: #f8f9fa;
+}
+
+.data-table th {
+    padding: 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.data-table td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.graph-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.graph-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.graph-title {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.graph-placeholder {
+    height: 200px;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.graph-caption {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.hospital-flow-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.hospital-node {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    width: 90%;
+    margin: 0.3rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hospital-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hospital-node.final {
+    background: #ffebee;
+    border-color: #c71e67;
+}
+
+.hospital-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.hospital-name {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+
+.hospital-status {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 0.8rem;
+    color: #c71e67;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin: 0.2rem 0;
+}
+
+.context-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Sour Gummy', sans-serif;
+    margin-top: 2rem;
+}
+
+.source-citation {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.source-citation a {
+    color: #666;
+    text-decoration: none;
+}
+
+.source-citation a:hover {
+    text-decoration: underline;
+}
+
+.source-link {
+    color: #c71e67;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.context-section h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.context-section p {
+    color: #495057;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .bed-illustration {
+        width: 100%;
+        height: auto;
+    }
+
+    .bed-label {
+        font-size: 12px;
+    }
+
+    .section-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .graph-grid {
+        grid-template-columns: 1fr;
+    }
+}
